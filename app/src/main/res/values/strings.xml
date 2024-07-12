@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">android-recruit-project</string>
+    <string name="cannot_get_course_data">無法取得課程資料</string>
 </resources>
