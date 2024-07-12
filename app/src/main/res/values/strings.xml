@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">android-recruit-project</string>
+    <string name="loading">載入中…</string>
+    <string name="no_course">沒有課程</string>
+    <string name="cannot_get_course_data">無法取得課程資料</string>
+    <string name="enterprise_assigned_course">企業課程</string>
+    <string name="assign">%s 指派</string>
+    <string name="elective">選修</string>
+    <string name="compulsory">必修</string>
+    <string name="no_due_date">無期限</string>
+    <string name="overdue">已逾期</string>
+    <string name="due_at">%s 截止</string>
+    <string name="due_in_day">截止日剩 %d 天</string>
+    <string name="due_today">1 天內截止</string>
+    <string name="last_viewed_at">%d 天前觀看</string>
+    <string name="passed">通過</string>
+    <string name="percent">%d%%</string>
 </resources>
