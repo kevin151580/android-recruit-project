@@ -58,7 +58,6 @@ class CourseListFormatTimeUseCase @Inject constructor(
             }
 
             else -> {
-                // 0 日以下 → 「已逾期」
                 context.getString(R.string.overdue)
             }
         }
