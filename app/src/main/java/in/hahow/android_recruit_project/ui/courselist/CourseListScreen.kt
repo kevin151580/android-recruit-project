@@ -112,8 +112,10 @@ fun CourseList(
                 bottom = 12.dp
             )
     ) {
-        items(items = courses,
-            key = { it.id }) {
+        items(
+            items = courses,
+            key = { it.id }
+        ) {
             CourseItem(it)
         }
     }
@@ -339,7 +341,7 @@ fun StatusRow(
             Spacer(modifier = Modifier.size(4.dp))
         }
         if (passedAt == null) {
-            DueStatue(
+            DueStatus(
                 assignment = assignment
             )
             Spacer(modifier = Modifier.size(10.dp))
@@ -407,7 +409,7 @@ private fun CompletionPercentage(
 }
 
 @Composable
-fun DueStatue(
+fun DueStatus(
     assignment: CourseItem.Assignment?,
     modifier: Modifier = Modifier
 ) {
@@ -428,9 +430,7 @@ fun DueStatue(
             painter = painterResource(id = R.drawable.icon_schedule_24px),
             tint = color,
             contentDescription = null,
-            modifier = Modifier
-                .size(20.dp)
-                .padding(2.dp)
+            modifier = Modifier.size(18.dp)
         )
         Spacer(modifier = Modifier.size(4.dp))
         val text = when {
