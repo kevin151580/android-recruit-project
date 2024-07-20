@@ -211,7 +211,7 @@ fun BottomEndLabel(
 ) {
     if (assignment != null) {
         BottomEndText(
-            text = stringResource(R.string.assign, assignment.assignerName),
+            text = "${assignment.assignerName} ${stringResource(R.string.assign)}",
             backgroundColor = Green19434C,
             modifier = modifier
         )
@@ -391,8 +391,9 @@ private fun CompletionPercentage(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
     ) {
+        val percentage = completionPercentage.times(100).toInt()
         Text(
-            text = stringResource(R.string.percent, completionPercentage.times(100).toInt()),
+            text = "$percentage ${stringResource(R.string.percent_sign)}",
             fontSize = 14.sp,
             color = GrayA0A0A0,
         )

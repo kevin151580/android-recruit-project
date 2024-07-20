@@ -21,10 +21,8 @@ class CourseListFormatTimeUseCase @Inject constructor(
         val lastViewedAtTimeMillis = lastViewedAt.time
         val elapsedTimeMillis = System.currentTimeMillis() - lastViewedAtTimeMillis
         return if (elapsedTimeMillis > 0) {
-            context.getString(
-                R.string.last_viewed_at,
-                elapsedTimeMillis / 1.days.inWholeMilliseconds
-            )
+            val days = elapsedTimeMillis / 1.days.inWholeMilliseconds
+            "$days ${context.getString(R.string.watched_days_before)}"
         } else {
             null
         }
@@ -45,12 +43,13 @@ class CourseListFormatTimeUseCase @Inject constructor(
         val leftTimeMillis = dueTimeMillis - System.currentTimeMillis()
         return when {
             leftTimeMillis >= 8.days.inWholeMilliseconds -> {
-                context.getString(R.string.due_at, simpleDateFormat.format(dueDate))
+                val date = simpleDateFormat.format(dueDate)
+                "$date ${context.getString(R.string.due)}"
             }
 
             leftTimeMillis >= 1.days.inWholeMilliseconds -> {
-                val daysLeft = leftTimeMillis / 1.days.inWholeMilliseconds
-                context.getString(R.string.due_in_day, daysLeft)
+                val days = leftTimeMillis / 1.days.inWholeMilliseconds
+                "${context.getString(R.string.due_in)} $days ${context.getString(R.string.day)}"
             }
 
             leftTimeMillis >= 0L -> {
